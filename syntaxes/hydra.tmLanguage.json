@@ -1,0 +1,181 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Hydra",
+  "patterns": [
+    {
+      "include": "#variableDeclaration"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#controlStructures"
+    },
+    {
+      "include": "#functions"  
+    },
+    {
+      "include": "#reservedWords"
+    },
+    {
+      "include": "#variable"
+    }
+  ],
+  "repository": {
+    "variableDeclaration": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.var.hydra",
+          "match": "\\bvar\\b"
+        },
+        {
+          "name": "support.type.hydra",
+          "match": "<\\s*(int|string|dec|bool)\\s*>"
+        },
+        {
+          "name": "variable.name.hydra",
+          "match": "\\b\\w+\\b(?=\\s*->)"
+        },
+        {
+          "name": "keyword.operator.assignment.hydra",
+          "match": "->"
+        },
+        {
+          "name": "constant.numeric.decimal.hydra",
+          "match": "\\b[-+]?\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.hydra",
+          "match": "\\b[-+]?\\d+\\b"
+        },
+        {
+          "name": "constant.language.boolean.hydra",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.hydra",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.hydra",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.hydra",
+          "begin": "--",
+          "end": "$"
+        }
+      ]
+    },
+    "controlStructures": {
+      "patterns": [
+        {
+          "name": "keyword.control.if.hydra",
+          "match": "@i"
+        },
+        {
+          "name": "keyword.control.else.if.hydra",
+          "match": "@ei"
+        },
+        {
+          "name": "keyword.control.else.hydra",
+          "match": "@e"
+        },
+        {
+          "name": "keyword.control.while.hydra",
+          "match": "@w"
+        },
+        {
+          "name":  "keyword.control.for.hydra",
+            "match":"@f"
+        },
+        {
+          "name": "keyword.control.input.hydra",
+          "match": "@r"
+        },
+        {
+          "name": "keyword.control.print.hydra",
+          "match": "@p"
+        }
+      ]
+    },
+
+    "reservedWords": {  
+      "patterns": [
+        {
+          "name": "keyword.reserved.begin.hydra",  
+          "match": "\\bbegin\\b" 
+        },
+        {
+          "name": "keyword.reserved.end.hydra",  
+          "match": "\\bend\\b" 
+        },
+        {
+          "name": "keyword.reserved.up.hydra",  
+          "match": "\\bup\\b"  
+        },
+        {
+          "name": "keyword.reserved.down.hydra",  
+          "match": "\\bdown\\b"  
+        },
+        {
+          "name": "keyword.reserved.from.hydra",
+          "match": "\\bfrom\\b"
+        },
+        {
+          "name": "keyword.reserved.to.hydra",
+          "match": "\\bto\\b"
+        },
+        {
+          "name": "keyword.reserved.and.hydra",
+          "match": "\\band\\b"
+        },
+        {
+          "name": "keyword.reserved.or.hydra",
+          "match": "\\bor\\b"
+        },
+        {
+          "name": "keyword.reserved.not.hydra",
+          "match": "\\bnot\\b"
+        },
+        {
+          "name": "meta.preprocessor.string",
+          "match": "\\bjamal\\b"
+        }
+      ]
+    },
+
+    "functions": {  
+      "patterns": [
+        {
+          "name": "keyword.function.define.hydra",  
+          "match": ">>" 
+        },
+        {
+          "name":  "variable.name.function.hydra",  
+            "match":"\\b\\w+\\b(?=\\s*\\(.*?\\))" 
+        }
+      ]
+    },
+
+    "variable": {
+      "patterns": [
+        {
+          "name": "variable.name.hydra",
+          "match": "\\b\\w+\\b(?=\\s*)"
+        }
+      ]
+    }
+  },
+  "scopeName":"source.hydra"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "hydra-lang",
+  "displayName": "Hydra Lang",
+  "description": "Hydra lang language support for university project",
+  "publisher": "pvbrto",
+  "icon": "images/hydra.png",
+  "version": "0.0.4",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "hydra",
+      "aliases": ["Hydra", "hydra"],
+      "extensions": [".hydra"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "hydra",
+      "scopeName": "source.hydra",
+      "path": "./syntaxes/hydra.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,39 @@
+begin;
+
+var <int> x -> 20;
+var <string> y -> "guilherme";
+var <dec> z -> 20.5;
+var <bool> w -> true;
+
+--comentario--
+
+@i (x = 20) >-> {
+
+} @ei (x = 10) >-> {
+
+} @e >-> {
+
+} 
+
+@w (true) >-> {
+
+}
+
+@f (var <int> ii -> 0 | from ii to 1.2 | up ii) >-> {
+
+    var <int> xx -> i + 1
+
+    @i(ii = 3 or ii = 5 and xx = 4 not)
+
+}
+
+jamal
+
+var <string> input -> @r("digite");
+@p(x);
+
+>> funcao() >-> {
+    
+}
+
+end;
